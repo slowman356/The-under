@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Under</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<!-- 登入頁 -->
+<div id="login" class="centered">
+  <h1>您好買家</h1>
+  <input type="text" id="username" placeholder="帳號" />
+  <input type="password" id="password" placeholder="密碼" />
+  <button onclick="login()">登入</button>
+  <div id="loginMessage" class="error"></div>
+</div>
+
+<!-- 黑市主頁 -->
+<div id="market" class="market hidden">
+  <h1>⚠ 黑市販售平台 - 僅限受信用戶 ⚠</h1>
+
+  <div class="item">
+    <h2>🫁 器官販售：腎臟</h2>
+    <p>價格：<span>$550,000</span></p>
+    <p>來源不明，但品質新鮮。</p>
+    <img src="https://media.discordapp.net/attachments/843799477360918549/1393096294490439772/96df39acd877797a2ba9edf1c518b1ba.png?ex=6871ed87&is=68709c07&hm=828a1e037f47f27ffb0635b21b41f6e2cdac69879a6b0955383c5d5e8d7847a1&=&format=webp&quality=lossless&width=938&height=625" alt="器官圖片" />
+    <button onclick="showOutOfStock(this)">購買</button>
+    <div class="buy-message"></div>
+  </div>
+  
+  <div class="item">
+    <h2>🫁 器官販售：眼角膜</h2>
+    <p>價格：<span>$550,000</span></p>
+    <p>來源不明，但品質新鮮。</p>
+    <img src="https://cdn.discordapp.com/attachments/843799477360918549/1393096967432700007/pngtree-cartoon-human-eyeball-organ-image_1413758.png?ex=6871ee27&is=68709ca7&hm=c5ae54655d6d3cbc7ca8fa7be927b1e94e4eac1319c3940b4dafd5ac18faed16&" alt="器官圖片" />
+    <button onclick="showOutOfStock(this)">購買</button>
+    <div class="buy-message"></div>
+  </div>
+  
+  <div class="item">
+    <h2>🫁 器官販售：心臟</h2>
+    <p>價格：<span>$1,550,000</span></p>
+    <p>來源不明，但品質新鮮。</p>
+    <img src="https://cdn.discordapp.com/attachments/843799477360918549/1393095691911299234/9k.png?ex=6871ecf7&is=68709b77&hm=4e126460ffec960cba14cd95507d7113e9728706978e095c880c377c38e0abcc&" alt="器官圖片" />
+    <button onclick="showOutOfStock(this)">購買</button>
+    <div class="buy-message"></div>
+  </div>
+
+  <div class="item">
+    <h2>💊 毒品：高純度古柯鹼（Cocaine）</h2>
+    <p>價格：<span>$60,000 / 50g</span></p>
+    <p>描述：純度達87%，街頭最受歡迎的交易品。</p>
+    <img src="https://cdn.discordapp.com/attachments/843799477360918549/1393097264863379456/a73e49a090e75d9f0829e9456fcdc347.png?ex=6871ee6e&is=68709cee&hm=9634a62dfebd6430ad9c8ffe8c6543a74e401effe1d0ca244bee7ca5abc6da42&" alt="古柯鹼" />
+    <button onclick="showOutOfStock(this)">購買</button>
+    <div class="buy-message"></div>
+  </div>
+
+  <div class="item">
+    <h2>💊 毒品：冰毒（Meth）</h2>
+    <p>價格：<span>$70,000 / 50g</span></p>
+    <p>描述：純度高、作用強烈，危險但高利潤。</p>
+    <img src="https://media.discordapp.net/attachments/843799477360918549/1393095487875322007/fkl-1n9-sKDn3X1JzqHWIcauy19lJv-EdhAo1iRdfVudK2J1WqXA_vRn7gJlvEj9X_Csq_7FexCIVsDpgIzXoAO00jRXb57MCcel9Oh7ctvC3xs.png?ex=6871ecc6&is=68709b46&hm=b727ca15d68ed25fd0055e5c1f052b2ce3e21bcb23dcffa487e6e2d821b851ab&=&format=webp&quality=lossless&width=575&height=346" alt="冰毒" />
+    <button onclick="showOutOfStock(this)">購買</button>
+    <div class="buy-message"></div>
+  </div>
+
+  <div class="item">
+    <h2>💨 特殊道具：殭屍煙彈（Zombie Smoke Bomb）</h2>
+    <p>價格：<span>$10,000</span></p>
+    <p>描述：釋放刺激性氣體，使目標短暫失神並嘔吐。</p>
+    <img src="https://cdn.discordapp.com/attachments/843799477360918549/1393095282119675965/4840860-PH.png?ex=6871ec95&is=68709b15&hm=acd8d6a3243228a30c20d1498ac317938bdfeb7834cf3355ffdc254f325adf36&" alt="殭屍煙彈" />
+    <button onclick="showOutOfStock(this)">購買</button>
+    <div class="buy-message"></div>
+  </div>
+
+  <div class="item">
+    <h2>💊 毒品：搖頭丸（MDMA）</h2>
+    <p>價格：<span>$60,000 / 50粒</span></p>
+    <p>描述：強效迷幻劑，適合派對。</p>
+    <img src="https://media.discordapp.net/attachments/843799477360918549/1393095562017902632/1071706230100d4187.png?ex=6871ecd8&is=68709b58&hm=a12c0078ec0f8277ccf413f048246a1601ebcf8871f7d16881f77e9b5ae81fdd&=&format=webp&quality=lossless&width=1590&height=920" alt="搖頭丸" />
+    <button onclick="showOutOfStock(this)">購買</button>
+    <div class="buy-message"></div>
+  </div>
+
+  <!-- 第二層驗證 -->
+  <div style="text-align: center; margin-top: 50px;">
+    <h2>🔒 進入更深層的交易區域</h2>
+    <input type="password" id="specialCode" placeholder="Enter special code" />
+    <button onclick="enterDeeper()">Proceed</button>
+    <div id="secretMessage" class="error"></div>
+  </div>
+</div>
+
+<script src="./js/script.js"></script>
+
+</body>
+</html>
